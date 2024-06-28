@@ -1,0 +1,20 @@
+{
+  "name": "shopify-blank",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "run-p -sr \"shopify:dev -- {@}\" \"vite:dev\" --",
+    "deploy": "run-s \"vite:build\" \"shopify:push -- {@}\" --",
+    "shopify:dev": "shopify theme dev",
+    "shopify:push": "shopify theme push",
+    "vite:dev": "vite",
+    "vite:build": "vite build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.2",
+    "vite": "^5.2.11",
+    "vite-plugin-shopify": "^3.0.1"
+  }
+}

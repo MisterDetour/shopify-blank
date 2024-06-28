@@ -1,0 +1,9 @@
+frontend/
+package.json
+package-lock.json
+vite.config.ts
+README.md
+jsconfig.json
+postcss.config.cjs
+node_modules
+.prettierrc.json
