@@ -3,8 +3,12 @@
   Do not attempt to modify this file directly, as any changes will be overwritten by the next build.
 {% endcomment %}
 {% assign path = vite-tag | replace: '~/', '../' | replace: '@/', '../' %}
-{% if path == "/frontend/entrypoints/theme.js" or path == "theme.js" %}
-  <script src="{{ 'theme-Biro5llY.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-{% elsif path == "/frontend/entrypoints/theme.scss" or path == "theme.scss" %}
+{% if path == '/frontend/entrypoints/theme.js' or path == 'theme.js' %}
+  <script
+    src="{{ 'theme-Biro5llY.js' | asset_url | split: '?' | first }}"
+    type="module"
+    crossorigin="anonymous"
+  ></script>
+{% elsif path == '/frontend/entrypoints/theme.scss' or path == 'theme.scss' %}
   {{ 'theme-ek9KGHEW.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% endif %}
