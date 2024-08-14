@@ -36,7 +36,7 @@ need cart empty logic on cart & drawer
 
 
 
-
+figure out react setup with vite plugin
 picture snippet - document conditional below
 utility classes
 code formatting standards (sass, etc)
