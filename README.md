@@ -1,6 +1,6 @@
 github is connected to sunflow test store: npm run dev -- --store sunflow-test-store
 
-CURRENT: go through vite plugin documentation again - organize tasks below
+CURRENT: go through vite plugin documentation again (js in footer) - organize tasks below
 
 
 
@@ -12,7 +12,7 @@ css reset
 
 setup basic templates (go through the docs in detail for each) - Review dawn theme templates as well:
 
-https://shopify.dev/docs/storefronts/themes/architecture/templates
+https://shopify.dev/docs/sto  refronts/themes/architecture/templates
 
 deal with javascript in main-product section
 
