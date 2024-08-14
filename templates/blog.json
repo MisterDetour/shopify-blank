@@ -1,9 +1,11 @@
 {
   "sections": {
-    "placeholder": {
-      "type": "placeholder",
+    "main": {
+      "type": "main-blog",
       "settings": {}
     }
   },
-  "order": ["placeholder"]
+  "order": [
+    "main"
+  ]
 }

@@ -2,9 +2,38 @@
   <div class="container">
     <div class="site-header-elements">
       <div>
-        <h2>Logo</h2>
+        {%- if template == 'index' -%}<h1 class="site-logo">{%- else -%}<div class="site-logo">{%- endif -%}
+        <a href="/">{{ shop.name }}</a>
+        {%- if template == 'index' -%}</h1>{%- else -%}</div>{%- endif -%}
       </div>
-      <div>Menu</div>
+      <nav class="site-nav">
+        <ul>
+          {%- for link in section.settings.menu.links -%}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+      <div class="site-header-links">
+        <a href="/cart" class="cart-link">
+          Cart (<span class="cart-item-count">{{ cart.item_count }}</span>)
+        </a>
+      </div>
     </div>
   </div>
 </header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-head",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

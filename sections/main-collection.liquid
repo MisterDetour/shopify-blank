@@ -1,15 +1,16 @@
 <div>
-  <div>
+  <div class="container">
     <h2>
       {{ collection.title }}
     </h2>
     <div>
       {%- paginate collection.products by 12 -%}
-        <div class="product-grid">
-          {% for prod in collection.products %}
-            {% render 'product-grid-item', prod: prod %}
+        <div class="grid-3 space">
+          {% for product in collection.products %}
+            {% render 'product', product: product %}
           {% endfor %}
         </div>
+        {{ paginate | default_pagination }}
       {% endpaginate %}
     </div>
   </div>

@@ -1,9 +1,9 @@
 {
   "sections": {
-    "placeholder": {
-      "type": "placeholder",
+    "main": {
+      "type": "main-cart",
       "settings": {}
     }
   },
-  "order": ["placeholder"]
+  "order": ["main"]
 }

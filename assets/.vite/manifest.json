@@ -1,6 +1,12 @@
 {
+  "frontend/entrypoints/theme.js": {
+    "file": "theme-Biro5llY.js",
+    "name": "theme",
+    "src": "frontend/entrypoints/theme.js",
+    "isEntry": true
+  },
   "frontend/entrypoints/theme.scss": {
-    "file": "theme-DLDFJ9A2.css",
+    "file": "theme-ek9KGHEW.css",
     "src": "frontend/entrypoints/theme.scss",
     "isEntry": true
   }

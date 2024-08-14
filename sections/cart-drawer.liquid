@@ -1,0 +1,25 @@
+<div class="cart-drawer">
+  <div class="cart-drawer-cart">
+    <h2>Cart Drawer</h2>
+    <button class="cart-drawer-close">Close</button>
+
+    {% form 'cart', cart %}
+      <div class="cart-items">
+        {% for item in cart.items %}
+          <div class="cart-item" data-key="{{ item.key }}">
+            {{ item.title }}
+            <div class="quantity-control">
+              <button class="btn-quantity btn-minus">-</button>
+              <input class="quantity-input" type="number" name="updates[]" value="{{ item.quantity }}">
+              <button class="btn-quantity btn-plus">+</button>
+            </div>
+            <a href="{{ item.url_to_remove }}">Remove</a>
+            <div>{{ item.final_line_price | money }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button>Checkout</button>
+    {% endform %}
+  </div>
+</div>

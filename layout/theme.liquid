@@ -22,6 +22,7 @@
 
     {% liquid
       render 'vite-tag' with 'theme.scss'
+      render 'vite-tag' with 'theme.js'
     %}
 
     {{ content_for_header }}
@@ -33,11 +34,11 @@
     </script>
   </head>
 
-  <body>
+  <body class="template-{{ template.name }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent"> Skip to content </a>
 
     {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
+      {%- section 'cart-drawer' -%}
     {%- endif -%}
 
     {% sections 'header-group' %}

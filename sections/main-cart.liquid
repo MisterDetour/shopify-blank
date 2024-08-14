@@ -1,0 +1,50 @@
+{% form 'cart', cart %}
+  <table class="cart-table">
+    <caption class="visually-hidden">
+      Your cart
+    </caption>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody class="cart-items">
+      {% for item in cart.items %}
+        <tr class="cart-item" data-key="{{ item.key }}">
+          <td>
+            <a href="{{ item.url }}">{{ item.product.title }}</a>
+            <div>
+              {{ item.original_price | money }}
+            </div>
+            <dl>
+              <div>
+                <dt>Color:</dt>
+                <dd>Sunset Navy</dd>
+              </div>
+              <div>
+                <dt>Size:</dt>
+                <dd>Small</dd>
+              </div>
+            </dl>
+          </td>
+          <td>
+            <div class="quantity-control">
+              <button class="btn-quantity btn-minus">-</button>
+              <input class="quantity-input" type="number" name="updates[]" value="{{ item.quantity }}">
+              <button class="btn-quantity btn-plus">+</button>
+            </div>
+            <a href="{{ item.url_to_remove }}">Remove</a>
+          </td>
+          <td>
+            {{ item.final_line_price | money }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <input type="submit" value="Update cart">
+  <input type="submit" name="checkout" value="Checkout">
+{% endform %}
