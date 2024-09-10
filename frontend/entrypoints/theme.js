@@ -2,19 +2,25 @@
 document.querySelectorAll('form[action="/cart/add"]').forEach((form) => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.querySelector('.cart-drawer').classList.add('active');
+    form.querySelector('.loading').classList.remove('hidden');
 
     // Add item to cart
-    await fetch('/cart/add', {
+    fetch('/cart/add', {
       method: 'post',
       body: new FormData(form),
     });
 
-    const res = await fetch('/cart.js');
-    const cart = await res.json();
-    updateCartCount(cart.item_count);
+    form.querySelector('.loading').classList.add('hidden');
+
+    // Open drawer and refresh contents
+    document.querySelector('.cart-drawer').classList.add('active');
+    updateCartDrawer();
+
+    // const res = await fetch('/cart.js');
+    // const cart = await res.json();
     
-    await updateCartDrawer();
+    // updateCartCount(cart.item_count);
+    
   });
 });
 

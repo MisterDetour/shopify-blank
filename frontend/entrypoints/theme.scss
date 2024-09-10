@@ -39,20 +39,23 @@
   justify-content: flex-end;
   background-color: rgba(0, 0, 0, .5);
   transition: visibility 100ms ease;
-  display: none;
+  visibility: hidden;
 
   &.active {
-    display: block;
+    visibility: visible;
+
+    .cart-drawer-cart {
+      transform: translate(0);
+    }
   }
 }
 
 .cart-drawer-cart {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
   width: 500px;
   background: white;
+  overflow: hidden;
+  transition: transform .2s ease;
+  transform: translate(100%);
 }
 
 .cart-table {
